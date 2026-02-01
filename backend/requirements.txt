@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+faster-whisper
+transformers
+torch
+scipy
+soundfile
+numpy
