@@ -6,11 +6,11 @@ import { cn } from '../lib/utils';
 
 export default function TrackView() {
     const [ticketId, setTicketId] = useState('');
-    const [status, setStatus] = useState<any>(null);
+    const [status, setStatus] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const handleSearch = async (e: React.FormEvent) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
         if (!ticketId) return;
 

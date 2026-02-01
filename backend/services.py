@@ -3,13 +3,14 @@ from faster_whisper import WhisperModel
 from transformers import pipeline
 
 class Transcriber:
-    def __init__(self, model_size="base", device="cpu", compute_type="int8"):
+    def __init__(self, model_size="small", device="cpu", compute_type="int8"):
         print(f"Loading Whisper model: {model_size} on {device}...")
         self.model = WhisperModel(model_size, device=device, compute_type=compute_type)
         print("Whisper model loaded.")
 
     def transcribe(self, audio_path: str):
-        segments, info = self.model.transcribe(audio_path, beam_size=5)
+        # Enabled VAD filter and increased beam size slightly for better accuracy
+        segments, info = self.model.transcribe(audio_path, beam_size=5, vad_filter=True)
         text = " ".join([segment.text for segment in segments])
         return {
             "text": text,

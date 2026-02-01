@@ -7,10 +7,10 @@ import { cn } from '../lib/utils';
 export default function CustomerView() {
     const [isRecording, setIsRecording] = useState(false);
     const [isProcessing, setIsProcessing] = useState(false);
-    const [transcript, setTranscript] = useState<string | null>(null);
-    const [result, setResult] = useState<any>(null);
-    const mediaRecorderRef = useRef<MediaRecorder | null>(null);
-    const chunksRef = useRef<Blob[]>([]);
+    const [transcript, setTranscript] = useState(null);
+    const [result, setResult] = useState(null);
+    const mediaRecorderRef = useRef(null);
+    const chunksRef = useRef([]);
 
     const startRecording = async () => {
         try {
@@ -48,7 +48,7 @@ export default function CustomerView() {
         }
     };
 
-    const processAudio = async (blob: Blob) => {
+    const processAudio = async (blob) => {
         const formData = new FormData();
         formData.append('file', blob, 'recording.webm');
 

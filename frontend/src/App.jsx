@@ -3,6 +3,7 @@ import CustomerLanding from './views/CustomerLanding';
 import CustomerView from './views/CustomerView';
 import TrackView from './views/TrackView';
 import FeedbackView from './views/FeedbackView';
+import TextSupportView from './views/TextSupportView';
 import DashboardView from './views/DashboardView';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<CustomerLanding />} />
           <Route path="/voice" element={<CustomerView />} />
+          <Route path="/text" element={<TextSupportView />} />
           <Route path="/track" element={<TrackView />} />
           <Route path="/feedback" element={<FeedbackView />} />
           <Route path="/admin" element={<DashboardView />} />

@@ -6,9 +6,9 @@ import { ArrowLeft, Send, Loader2, CheckCircle, Copy } from 'lucide-react';
 export default function TextSupportView() {
     const [text, setText] = useState('');
     const [isProcessing, setIsProcessing] = useState(false);
-    const [result, setResult] = useState<any>(null);
+    const [result, setResult] = useState(null);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!text.trim()) return;
 

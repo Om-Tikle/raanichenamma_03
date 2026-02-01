@@ -3,20 +3,7 @@ import axios from 'axios';
 import { cn } from '../lib/utils';
 import { Check, Loader2 } from 'lucide-react';
 
-interface LiveCardProps {
-    data: {
-        id: number;
-        transcription: string;
-        language: string;
-        category: string;
-        sentiment: string;
-        sentiment_score: number;
-        timestamp: string;
-        status: string;
-    };
-}
-
-export default function LiveCard({ data }: LiveCardProps) {
+export default function LiveCard({ data }) {
     const [status, setStatus] = useState(data.status);
     const [updating, setUpdating] = useState(false);
 
